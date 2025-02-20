@@ -1,46 +1,56 @@
 <script setup>
+import blockchain from '@/assets/img/icons8-bitcoin-cryptocurrency-50.png'
+import webdesign from '@/assets/img/icons8-web-design-50.png'
+import website from '@/assets/img/icons8-web-development-50.png'
 </script>
 
 <template>
     <div class="container">
         <h2>my services</h2>
         <div class="content">
-            <div class="card">
+            <div class="card" id="card">
                 <div class="icon">
-                    <img src="" class="logo" alt="">
+                    <img :src="blockchain" class="logo" alt="">
                 </div>
-                <h3>web developer</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ipsa quia asperiores laudantium provident ad tempore quam blanditiis neque iure.</p>
-                <div class="button">
+                <h3>forex/blochain technology</h3>
+                <p>explore the web3, get familar with blockchain technology.
+                    how it works, the hypes and trend of things, get the bset services, 
+                    community management, content writting, trading and airdrops.
+                    learn when to buy and sell in the forex market.
+                </p>
+                <!-- <div class="button">
                         <button class="btn">
                             learn more
                         </button>
-                     </div>
+                     </div> -->
             </div>
             <div class="card">
                 <div class="icon">
-                    <img :src="img1" class="logo" alt="">
+                    <img :src="webdesign" class="logo" alt="">
                 </div>
-                <h3>web developer</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, adipisci? Dignissimos, ea delectus? Distinctio doloribus deserunt quos magni ipsum dolor!</p>
-                <div class="button">
+                <h3>web design</h3>
+                <p> get scalable and modern designs,all things web2 to web3, 
+                    from beautiful product design to the most attaracting landing pages.</p>
+                <!-- <div class="button">
                         <button class="btn">
                             learn more
                         </button>
-                     </div>
+                     </div> -->
             </div>
-            <div class="card">
+            <div class="card" id="card">
                 <div class="icon">
-                    <img :src="img1"  alt="">
+                    <img :src="website"  alt="">
                 </div>
-                <h3>web developer</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium ratione
-                     ea quidem mollitia aliquam reprehenderit repudiandae veritatis alias eveniet et?</p>
-                     <div class="button">
+                <h3>web development</h3>
+                <p>get a full and functional websites of your choice, built to your liking with the 
+                    most morden technology, from all things web2 t0 web3 using the best frontend tools down to the back end. easy for user to
+                    interact with and navigate.
+                </p>
+                     <!-- <div class="button">
                         <button class="btn">
                             learn more
                         </button>
-                     </div>
+                     </div> -->
             </div>
         </div>
     </div>
@@ -54,25 +64,37 @@
     padding: 50px 30px 50px 30px;
 }
 h2{
-    padding: 20px  10px 20px 10px;
+    padding: 20px  10px 20px 50px;
     font-size: 30px;
 }
 .content{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .card{
     width: 300px;
-    height: 300px;
+    height: 330px;
     color: snow;
-    border: 1px solid teal;
+    padding-top: 20px;
+    /* border: 1px solid teal; */
     padding-inline: 20px;
     border-radius: 10px;
-    animation: appaer 10s ease-in-out infinite 1s;
-    background: rgba(24, 23, 23, 0.507);
-    box-shadow: 0px 1px 2px 0px rgba(60,64,67,0.3),
-                0px 2px 6px 2px rgba(60,64,67,0.15);
+    transition: 0.5s ease;
+    /* animation: appaer 10s ease-in-out infinite 1s; */
+    /* background: rgba(24, 23, 23, 0.507); */
+              /* inner glow 👇 */
+    box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+              100%, 0.075),
+              /* shadow ring 👇 */
+              0 0 0 1px hsla(0, 0%, 0%, 0.05),
+              /* multiple soft shadows 👇 */
+              0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+              0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+              0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+}
+.card:hover{
+    border: 2px solid teal;
 }
 @keyframes appaer{
     0%{
@@ -111,6 +133,7 @@ h2{
     padding: 10px 20px 10px 20px;
     outline: none;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 .icon img{
     width: 60px;
@@ -119,5 +142,15 @@ h2{
 }
 .icon{
     padding-block: 10px;
+}
+@media(max-width:768px){
+    .content{
+        flex-direction: column;
+        gap: 30px;
+    }
+    h2{
+        text-align: center;
+        padding-inline: 0;
+    }
 }
 </style>

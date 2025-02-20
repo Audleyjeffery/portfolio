@@ -1,26 +1,34 @@
 <script setup>
-import facebook from '@/assets/img/facebook.png'
-import insta from '@/assets/img/insta.png'
-import whatlogo from '@/assets/img/whatlogo.png'
+import facebook from '@/assets/img/icons8-facebook-50.png'
+import insta from '@/assets/img/icons8-instagram-50.png'
+import whatlogo from '@/assets/img/icons8-whatsapp-50.png'
+import phone from '@/assets/img/icons8-phone-50.png'
+import gmail from '@/assets/img/icons8-gmail-50.png'
+
+import { ref } from 'vue';
+const whalink = ref('https://wa.link/mrhg54')
+const facebooklink = ref('https://facebook.com/Audleyjeffery')
+const instalink = ref('https://instagram.com/Audleyjeffery')
+
 </script>
 
 <template>
     <div class="wrapper">
+        <h2>contact me</h2>
         <div class="content">
             <div class="contact">
-                <h2>contact me</h2>
                 <div class="gmail">
-                    <img src="" alt="">
+                    <img :src="gmail" alt="">
                     <h3>jefferysobaeh@gmail.com</h3>
                 </div>
                 <div class="phone">
-                    <img src="" alt="">
+                    <img :src="phone" alt="">
                     <h3>09052602298</h3>
                 </div>
                 <div class="socials">
-                    <img :src="facebook" alt="">
-                    <img :src="insta" alt="">
-                    <img :src="whatlogo" alt="">
+                    <a :href="facebooklink"><img :src="facebook" alt=""></a>
+                   <a :href="instalink"><img :src="insta" alt=""></a>
+                    <a :href="whalink"><img :src="whatlogo" alt=""></a>
                 </div>
             </div>
             <div class="imput">
@@ -51,6 +59,8 @@ import whatlogo from '@/assets/img/whatlogo.png'
 }
 h2{
     font-size: 30px;
+    padding-left: 80px;
+    padding-top: 20px;
 }
 .content{
     display: flex;
@@ -70,6 +80,7 @@ input{
     width: 100%;
     height: 100%;
     background: rgba(24, 23, 23, 0.507);
+    color: snow;
     border: none;
     padding-inline: 10px;
 }
@@ -82,6 +93,10 @@ textarea{
     height: 100%;
     background: rgba(24, 23, 23, 0.507);
     border: none;
+    padding: 10px;
+    color: snow;
+    resize: none;
+
 }
 .btn{
     padding-block: 20px;
@@ -119,6 +134,36 @@ textarea{
 .socials img{
     width: 20px;
     height: 20px;
+}
+
+@media(max-width:768px){
+    .content{
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .socials{
+        justify-content: center;
+        text-align: center;
+    }
+    .gmail, .phone{
+        justify-content: center;
+        align-items: normal;
+    }
+
+    .inptt1, .inptt2{
+        width: 350px;
+    }
+    .imput{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    h2{
+        text-align: center;
+        padding-inline: 0;
+    }
 }
 
 </style>

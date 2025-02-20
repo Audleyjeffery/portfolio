@@ -1,24 +1,29 @@
 <script setup>
 import im2 from '@/assets/img/FB.jpg'
-import facebook from '@/assets/img/facebook.png'
-import insta from '@/assets/img/insta.png'
-import whatlogo from '@/assets/img/whatlogo.png'
+import facebook from '@/assets/img/icons8-facebook-50.png'
+import insta from '@/assets/img/icons8-instagram-50.png'
+import whatlogo from '@/assets/img/icons8-whatsapp-50.png'
+
+import { ref } from 'vue';
+const whalink = ref('https://wa.link/mrhg54')
+const facebooklink = ref('https://facebook.com/Audley.jeffery.7')
+const instalink = ref('https://instagram.com/Audleyjeffery')
 </script>
 
 <template>
     <div class="container">
         <div class="content">
-            <div class="info left">
-                <h4>web developer|python programmer|entranpuer</h4>
+            <div class="info">
                 <h2> <span>jeffery  </span>sobaeh</h2>
-                <p>hi, my name is jefery sobaeh, i am from lagos nigeria,<br> and i dabble in all things web development</p>
+                <h4>web developer | python programmer | entraprenur</h4>
+                <p>Hi, my name is jeffery sobaeh, i am from lagos nigeria,<br> and i dabble in all things web development</p>
                 <div class="socials">
-                    <img :src="facebook" alt="">
-                    <img :src="insta" alt="">
-                    <img :src="whatlogo" alt="">
+                    <a :href="facebooklink"><img :src="facebook" alt=""></a>
+                   <a :href="instalink"><img :src="insta" alt=""></a>
+                    <a :href="whalink"><img :src="whatlogo" alt=""></a>
                 </div>
                 <div class="btn">
-                    <button>hire me</button>
+                    <a :href="whalink"><button>hire me</button></a>
                 </div>
             </div>
             <div class="profile">
@@ -54,9 +59,10 @@ h2{
     width: 100%;
     font-size: 60px;
 }
-.info h3{
+.info h4{
     width: 100%;
-    font-size: 25px;
+    font-size: 20px;
+    padding-block: 10px;
 }
 p{
     text-transform: none;
@@ -80,7 +86,7 @@ p{
     border: 8px solid teal;
 }
 span{
-    color: #0f76ac;
+    color: teal;
 }
 .socials{
     display: flex;
@@ -97,18 +103,32 @@ span{
     font-size: 20px;
     letter-spacing: 2px;
     text-transform: capitalize;
-    background: #0f76ac;
-    color: snow;
-    border: none;
+    color: teal;
+    border: 1px solid snow;
     border-radius: 1px;
-
+    background: transparent;
+    transition: 0.8s ease;
+}
+.btn button:hover{
+    background: snow;
+    color: black;
 }
 @media (max-width:760px){
     .content{
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .info{
+        order: 1;
     }
     .wrapper{
-        order: 0;
+        margin-bottom: 20px;
+    }
+    .socials{
+        justify-content: center;
+        align-items: center;
     }
 }
 
